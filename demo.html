@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversion Tool</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: linear-gradient(180deg, #76abae, #536162 45.5%, #313232);
+            color: #FFFFFF;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .form-container {
+            background-color: #76ABAE;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .select,
+        .textarea {
+            background-color: #ffffff;
+            color: #31363F;
+            width: 750px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        .submit-btn {
+            appearance: none;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 100%;
+            margin-bottom: 10px;
+            background-color: #FFFFFF;
+            color: #31363F;
+            font-size: 16px;
+        }
+
+        .submit-btn {
+            padding: 10px 20px;
+            background-color: #4B5563;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #374151;
+        }
+
+        pre {
+            background-color: #f0f0f0;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            color: #31363F;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container ">
+        <div class="form-container">
+            <form method="post" enctype="multipart/form-data">
+                {% if conversion_choice == 'default' %}
+                <select name="conversion" class="select">
+                    <option selected disabled> Choose Conversion Type</option>
+                    <option value="lang">Language</option>
+                    <option value="db">DB</option>
+                    <option value="os">OS</option>
+                    <option value="viz">Visualization</option>
+                </select>
+                <br>
+                <input type="submit" value="Submit" name="submit_choice" class="submit-btn" />
+
+                {% elif conversion_choice == 'lang' %}
+                <pre style="overflow-y:scroll;">
+                {{ response }}
+            </pre>
+
+                <select name="type1" class="select">
+                    <option selected disabled>Choose Language</option>
+                    <option value="C">C</option>
+                    <option value="C#">C#</option>
+                    <option value="cpp">C++</option>
+                    <option value="go">GO</option>
+                    <option value="java">Java</option>
+                    <option value="javascript">Javascript</option>
+                    <option value="python">Python</option>
+                    <option value="R">R</option>
+                </select>
+                <select name="type2" class="select">
+                    <option selected disabled>Choose Language</option>
+                    <option value="C">C</option>
+                    <option value="C#">C#</option>
+                    <option value="cpp">C++</option>
+                    <option value="go">GO</option>
+                    <option value="java">Java</option>
+                    <option value="javascript">Javascript</option>
+                    <option value="python">Python</option>
+                    <option value="R">R</option>
+                </select>
+                <br>
+
+                <input type="radio" id="program" name="input_type" value="program">
+                <label for="program">User Input</label>
+                <input type="radio" id="file_upload" name="input_type" value="file_upload">
+                <label for="file_upload">File Upload</label>
+
+
+                <textarea name="program" rows="10" cols="50" class="textarea"
+                    placeholder="Enter your input program here" disabled>{{ input_program }}</textarea>
+                <input type="file" name="file_upload" accept=".txt, .py, .java, .cpp, .c, .go, .R, .js "
+                    class="submit-btn" disabled>
+
+                <br>
+                <input type="submit" value="Submit" name="submit_lang" class="submit-btn" />
+
+
+                {% elif conversion_choice == 'db' %}
+                <pre>
+                {{ response }}
+                </pre>
+
+                <select name="type1" class="select">
+                    <option selected disabled>Choose DB</option>
+                    <option value="cassandra">ApacheCassandra</option>
+                    <option value="dynamodb">DynamoDB</option>
+                    <option value="mongodb">MongoDB</option>
+                    <option value="mysql">MySQL</option>
+                    <option value="neo4j">Neo4j</option>
+                    <option value="pl/sql">PL/SQL</option>
+                    <option value="postrgesql">PostgreSQL</option>
+                    <option value="sql">SQL</option>
+                </select>
+
+                <select name="type2" class="select">
+                    <option selected disabled>Choose DB</option>
+                    <option value="cassandra">ApacheCassandra</option>
+                    <option value="dynamodb">DynamoDB</option>
+                    <option value="mongodb">MongoDB</option>
+                    <option value="mysql">MySQL</option>
+                    <option value="neo4j">Neo4j</option>
+                    <option value="pl/sql">PL/SQL</option>
+                    <option value="postrgesql">PostgreSQL</option>
+                    <option value="sql">SQL</option>
+                </select>
+                <textarea name="query" rows="10" cols="50" class="textarea"
+                    placeholder="Enter your input query here"></textarea>
+                <input type="file" name="file_upload" accept=".txt" class="submit-btn" />
+                <input type="submit" value="Submit" name="submit3_db" class="submit-btn" />
+
+                {% elif conversion_choice == 'os' %}
+                <pre>
+                {{ response }}
+            </pre>
+                <select name="type1" class="select">
+                    <option selected disabled>Choose OS</option>
+                    <option value="linux">Linux</option>
+                    <option value="mac">MAC</option>
+                    <option value="windows">Windows</option>
+                </select>
+
+                <select name="type2" class="select">
+                    <option selected disabled>Choose os</option>
+                    <option value="linux">Linux</option>
+                    <option value="mac">MAC</option>
+                    <option value="windows">Windows</option>
+                </select>
+                <textarea name="command" rows="10" cols="50" class="textarea"
+                    placeholder="Enter your input command here"></textarea>
+                <input type="file" name="file_upload" accept=".txt" class="submit-btn" />
+                <input type="submit" value="Submit" name="submit_os" class="submit-btn" />
+                {% elif conversion_choice == 'viz' %}
+                <pre>
+                    {{ response }}
+                </pre>
+                <select name="type1" class="select">
+                    <option selected disabled>Choose Visualization Language</option>
+                    <option value="angular">Angular</option>
+                    <option value="html">HTML</option>
+                    <option value="javascript">JavaScript</option>
+                    <option value="react">React</option>
+                    <option value="vue">Vue</option>
+                </select>
+
+                <select name="type2" class="select">
+                    <option selected disabled>Choose Visualization Languages</option>
+                    <option value="angular">Angular</option>
+                    <option value="html">HTML</option>
+                    <option value="javascript">JavaScript</option>
+                    <option value="react">React</option>
+                    <option value="vue">Vue</option>
+                </select>
+                <textarea name="code" rows="10" cols="50" class="textarea"
+                    placeholder="Enter your input command here"></textarea>
+                <input type="file" name="file_upload" accept=".txt, .ts, .html, .js, .jsx, .tsx, .vue"
+                    class="submit-btn" />
+                <input type="submit" value="Submit" name="submit_viz" class="submit-btn" />
+                {% endif %}
+            </form>
+        </div>
+    </div>
+</body>
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var user_input_radio = document.getElementById('program');
+        var file_upload_radio = document.getElementById('file_upload');
+        var textarea = document.querySelector('textarea[name="program"]');
+        var file_input = document.querySelector('input[type="file"]');
+
+        // Disable both textarea and file input initially
+        textarea.disabled = true;
+        file_input.disabled = true;
+
+        // Event listener for user input radio button
+        user_input_radio.addEventListener('click', function () {
+            textarea.disabled = false;
+            file_input.disabled = true;
+        });
+
+        // Event listener for file upload radio button
+        file_upload_radio.addEventListener('click', function () {
+            textarea.disabled = true;
+            file_input.disabled = false;
+        });
+    });
+</script>
+
+</html>

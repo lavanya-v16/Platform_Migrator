@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+  <link rel="stylesheet" href="./global.css" />
+  <link rel="stylesheet" href="./Wireframe4.css" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&display=swap"
+  />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Libre Franklin:wght@400;600&display=swap"
+  />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&display=swap"
+  />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap"
+  />
+</head>
+<body>
+  <div class="wireframe-4">
+    <header class="logo-1-parent">
+      <img
+        class="logo-1-icon1"
+        loading="lazy"
+        alt=""
+        src="./public/logo-1@2x.png"
+      />
+
+      <button class="home-instance">
+        <div class="home-instance-child"></div>
+        <img class="home-icon" alt="" src="./public/home.svg" id="homeIcon" />
+      </button>
+    </header>
+    <main class="advanced-platform">
+      <div class="advanced-platform-child"></div>
+      <section class="advanced-platform-inner">
+        <div class="platform-migrator-label-parent">
+          <div class="platform-migrator-label">
+            <div class="the-migrator">
+              <h1 class="the-platform-migrator-container">
+                <p class="p1"></p>
+                <p class="the-platform-migrator">The Platform Migrator</p>
+              </h1>
+              <div class="python-java-selection">
+                <!-- Replace with Dropdown Menu -->
+                <select name="programmingLanguage" id="programmingLanguage" class="programming-language-dropdown">
+                  <option value="python">Language</option>
+                  <option value="java">OS</option>
+                  <option value="c">Database</option>
+                  <option value="javascript">JavaScript</option>
+                  <!-- Add more options as needed -->
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="unlock-seamless-conversions">
+            Unlock seamless conversions with our advanced Platform Migrator,
+            leveraging AI-driven transformation for your needs.
+          </div>
+          <!-- Remove the old expanders section -->
+        </div>
+      </section>
+      <div class="submit-button-wrapper1">
+        <button class="submit-button1" onclick="submitForm()">
+          <div class="submit1">Submit</div>
+        </button>
+      </div>
+      <section class="frame-section">
+        <div class="frame-parent7">
+          <div class="language-selection-parent">
+            <div class="language-selection">
+              <h2 class="input">Input</h2>
+            </div>
+            <input class="dropdown-box-instance2" type="text" />
+            <div class="expanders-pair">
+              <select name="programmingLanguage" id="programmingLanguage" class="programming-language-dropdown1">
+                <option value="python">Language</option>
+                <option value="java">OS</option>
+                <option value="c">Database</option>
+                <option value="javascript">JavaScript</option>
+                <!-- Add more options as needed -->
+              </select>
+            </div>
+          </div>
+          <div class="frame-child8"></div>
+          <div class="input-file-parent">
+            <div class="input-file">Input File</div>
+            <div class="frame-wrapper3">
+              <div class="vector-parent">
+                <img
+                  class="frame-child10"
+                  alt=""
+                  src="./public/rectangle-18.svg"
+                />
+                <input class="label" type="file" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="frame-parent8">
+          <div class="frame-parent9">
+            <div class="output-wrapper">
+              <h2 class="output">Output</h2>
+            </div>
+            <input class="dropdown-box-instance1" type="text" />
+            <div class="expanders-pair">
+              <select name="programmingLanguage" id="programmingLanguage" class="programming-language-dropdown2">
+                <option value="python">Language</option>
+                <option value="java">OS</option>
+                <option value="c">Database</option>
+                <option value="javascript">JavaScript</option>
+                <!-- Add more options as needed -->
+              </select>
+            </div>
+          </div>
+        </div>
+        <input class="dropdown-box-instance1" type="text" />
+      </section>
+      <!-- Add the Submit Button -->
+      <div class="submit-button-wrapper">
+        <button class="submit-button" onclick="submitForm()">
+          <div class="submit">Submit</div>
+        </button>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    var homeIcon = document.getElementById("homeIcon");
+    if (homeIcon) {
+      homeIcon.addEventListener("click", function (e) {
+        window.location.href = "./index.html";
+      });
+    }
+
+    function submitForm() {
+      // Fetch selected programming language
+      var selectedLanguage = document.getElementById("programmingLanguage").value;
+      // You can perform further actions with the selectedLanguage value
+      console.log("Selected Language:", selectedLanguage);
+      // Here you can redirect or submit the form data via AJAX
+      // Example: window.location.href = "/submit?language=" + selectedLanguage;
+    }
+  </script>
+</body>
+</html>

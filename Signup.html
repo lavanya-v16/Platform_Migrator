@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./Signup.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Libre Franklin:wght@400;600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap"
+    />
+  </head>
+  <body>
+    <div class="about">
+      <header class="logo-1-group">
+        <img
+          class="logo-1-icon2"
+          loading="lazy"
+          alt=""
+          src="./public/logo-1@2x.png"
+        />
+
+        <button class="logo-area">
+          <div class="logo-area-child"></div>
+          <img
+            class="home-icon1"
+            alt=""
+            src="./public/home.svg"
+            id="homeIcon"
+          />
+        </button>
+      </header>
+      <section class="about-inner">
+        <div class="form-wrapper">
+          <div class="form">
+            <div class="email-field">
+              <h2 class="create-account">Create Account</h2>
+              <div class="confirm-field">
+                <form class="form1">
+                  <div class="form-fields">
+                    <div class="email">
+                      <input
+                        class="email-address"
+                        placeholder="Email address"
+                        type="text"
+                      />
+
+                      <img
+                        class="iconaccount"
+                        alt=""
+                        src="./public/iconaccount.svg"
+                      />
+                    </div>
+                    <div class="password">
+                      <input
+                        class="password1"
+                        placeholder="Password"
+                        type="password"
+                      />
+
+                      <img
+                        class="iconpassword"
+                        alt=""
+                        src="./public/iconpassword.svg"
+                      />
+                    </div>
+                    <div class="confirm-password">
+                      <input
+                        class="confirm-password1"
+                        placeholder="Confirm password"
+                        type="password"
+                      />
+
+                      <img
+                        class="iconpassword1"
+                        alt=""
+                        src="./public/iconpassword.svg"
+                      />
+                    </div>
+                  </div>
+                  <button class="search-flights-button">
+                    <div class="button">Sign up</div>
+                  </button>
+                </form>
+              </div>
+              <div class="email-field-inner">
+                <div class="line-div"></div>
+              </div>
+              <div class="social-media-login">
+                <div class="or-sign-up">Or sign up with</div>
+                <div class="social-login-container">
+                  <div class="social-login">
+                    <img
+                      class="image-icon"
+                      loading="lazy"
+                      alt=""
+                      src="./public/image@2x.png"
+                    />
+
+                    <div class="text">Google</div>
+                  </div>
+                  <div class="social-login1">
+                    <img
+                      class="image-icon1"
+                      loading="lazy"
+                      alt=""
+                      src="./public/image-1@2x.png"
+                    />
+
+                    <div class="mail">Facebook</div>
+                  </div>
+                  <div class="social-login2">
+                    <img
+                      class="image-icon2"
+                      loading="lazy"
+                      alt=""
+                      src="./public/image-2@2x.png"
+                    />
+
+                    <div class="description">Apple</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="i-already-have-container">
+              <span>I already have an account. </span>
+              <span class="login">Login</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      var homeIcon = document.getElementById("homeIcon");
+      if (homeIcon) {
+        homeIcon.addEventListener("click", function (e) {
+          window.location.href = "./index.html";
+        });
+      }
+      </script>
+  </body>
+</html>

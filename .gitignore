@@ -1,0 +1,47 @@
+# OS generated files
+.DS_Store
+Thumbs.db
+Desktop.ini
+__MACOSX/
+
+# Editor directories and files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+
+# Temporary or cache files
+*.tmp
+*.temp
+*.cache
+*.bak
+
+# Python cache and compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.ipynb_checkpoints/
+
+# Environment and virtualenv
+.env
+venv/
+.pip_cache/
+
+# Log files
+*.log
+
+# Build directories
+dist/
+out/
+public/
+
+# Node Modules
+node_modules/
+
+# Coverage
+.coverage
+*.cover
+coverage.xml
+htmlcov/
